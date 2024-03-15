@@ -15,4 +15,8 @@ defmodule OpentelemetryObanDemo do
   def hello do
     :world
   end
+
+  def insert(id) do
+    %{id: id} |> OpentelemetryObanDemo.Worker.new() |> Oban.insert()
+  end
 end
