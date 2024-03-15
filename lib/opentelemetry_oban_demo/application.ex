@@ -7,6 +7,9 @@ defmodule OpentelemetryObanDemo.Application do
 
   @impl true
   def start(_type, _args) do
+    OpentelemetryEcto.setup([:opentelemetry_oban_demo, :repo])
+    OpentelemetryOban.setup()
+
     children = [
       OpentelemetryObanDemo.Repo,
       {Oban, Application.fetch_env!(:opentelemetry_oban_demo, Oban)}
