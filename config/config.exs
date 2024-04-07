@@ -8,6 +8,6 @@ config :opentelemetry_oban_demo, OpentelemetryObanDemo.Repo,
 
 config :opentelemetry_oban_demo, ecto_repos: [OpentelemetryObanDemo.Repo]
 
-config :opentelemetry_oban_demo, Oban, repo: OpentelemetryObanDemo.Repo
+config :opentelemetry_oban_demo, Oban, repo: OpentelemetryObanDemo.Repo, queues: [default: 10]
 
 import_config "#{Mix.env()}.exs"
